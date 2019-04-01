@@ -1,0 +1,5 @@
+.nav {
+    width: 100px;
+    grid-area: n;
+    background-color: greenyellow;
+}
