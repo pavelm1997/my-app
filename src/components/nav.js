@@ -1,5 +1,5 @@
 import React from 'react';
-import './nav.css';
+import './nav.module.css';
 let Navbar = () => {
     return ( <nav className = 'nav'>
     <div>

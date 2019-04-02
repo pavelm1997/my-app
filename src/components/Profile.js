@@ -1,5 +1,5 @@
 import React from 'react';
-import './Profile.css';
+import './Profile.module.css';
 let Profile = () => {
     return ( <div className = 'content'>
         <img src = 'https://millionmilesecrets.com/wp-content/uploads/denali-national-park-1733313_1280.jpg'/>
