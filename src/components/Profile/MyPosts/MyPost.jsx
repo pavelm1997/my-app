@@ -10,6 +10,8 @@ let MyPost = () => {
             <button>Add post</button>
             </div>
         </div>
-      <Post/>
+      <Post message = "How are you" like = "15"/>
+        <Post message = "It's my first post" like = "19"/>
+        <Post message = "It's my second post" like = "5"/>
     </div>);};
 export default MyPost;

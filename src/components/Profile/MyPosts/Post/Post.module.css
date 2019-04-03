@@ -1,0 +1,10 @@
+.item
+{
+    color: darkblue;
+}
+.item_img
+{
+    width: 60px;
+    height: 68px;
+    border-radius: 30px;
+}
