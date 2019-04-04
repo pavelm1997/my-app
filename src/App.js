@@ -4,20 +4,27 @@ import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/nav.jsx";
 import Profile from "./components/Profile/Profile.jsx";
 import Dialog from "./components/Dialogs/Dialogs";
+import {BrowserRouter, Route} from "react-router-dom";
+import Music from "./components/Music/Music";
+import News from "./components/News/News";
+import Setting from "./components/Setting/Setting";
 
 const App = () => {
 
     return (
-        <div className={c.app_wriper}>
-            <Header/>
-            <Navbar/>
-            <div className={c.app_wriper_content}>
-
-                <Dialog/>
+        <BrowserRouter>
+            <div className={c.app_wriper}>
+                <Header/>
+                <Navbar/>
+                <div className={c.app_wriper_content}>
+                    <Route path = '/profile' component={Profile}/>
+                    <Route path = '/dialogs' component={Dialog}/>
+                    <Route path = '/music' component={Music}/>
+                    <Route path = '/news' component={News}/>
+                    <Route path = '/setting' component={Setting}/>
+                </div>
             </div>
-            {/*<Profile/>*/}
-        </div>
-
+        </BrowserRouter>
     );
 
 };
