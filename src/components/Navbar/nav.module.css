@@ -2,8 +2,15 @@
     width: auto;
     grid-area: n;
     background-color: greenyellow;
+    padding: 20px;
+    text-align: center;
 }
-.item
+.item a
 {
     color: darkblue;
+    text-decoration: none;
+}
+.item a.active
+{
+    color: blueviolet;
 }
