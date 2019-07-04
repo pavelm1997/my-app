@@ -3,20 +3,20 @@ import c from './nav.module.css';
 import {NavLink} from "react-router-dom";
 let Navbar = () => {
     return ( <nav className = {c.nav}>
-    <div className={c.item}>
-        <NavLink to='/profile' activeClassName={c.active}> Profile</NavLink>
+    <div >
+        <NavLink to='/profile' className={c.myButton}> Profile</NavLink>
     </div>
-    <div className={c.item}>
-        <NavLink to='/dialogs' activeClassName={c.active}> Messages</NavLink>
+    <div >
+        <NavLink to='/dialogs' className={c.myButton}> Messages</NavLink>
     </div>
-    <div className={c.item}>
-        <NavLink to='/news' activeClassName={c.active}> News</NavLink>
+    <div>
+        <NavLink to='/news' className={c.myButton}> News</NavLink>
     </div>
-    <div  className={c.item}>
-        <NavLink to='/music' activeClassName={c.active}> Music</NavLink>
+    <div  >
+        <NavLink to='/music' className={c.myButton}> Music</NavLink>
     </div>
-    <div className={c.item}>
-        <NavLink to='/setting' activeClassName={c.active}> Setting</NavLink>
+    <div >
+        <NavLink to='/setting' className={c.myButton}> Setting</NavLink>
     </div>
 </nav>);};
 export default Navbar;

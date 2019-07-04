@@ -3,7 +3,7 @@
     width: 1200px;
     display: grid;
     grid-template-rows: 120px 5fr;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 10fr;
     grid-template-areas: "h h" "n c";
 
     /* grid-gap: 10px;*/
@@ -12,6 +12,5 @@
 
 .app_wriper_content {
     grid-area: c;
-    background-color: yellow;
     text-indent: 13px;
 }
