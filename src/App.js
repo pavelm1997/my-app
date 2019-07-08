@@ -9,7 +9,7 @@ import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Setting from "./components/Setting/Setting";
 
-const App = () => {
+const App = (props) => {
 
     return (
         <BrowserRouter>
@@ -17,8 +17,8 @@ const App = () => {
                 <Header/>
                 <Navbar/>
                 <div className={c.app_wriper_content}>
-                    <Route path = '/profile' component={Profile}/>
-                    <Route path = '/dialogs' component={Dialog}/>
+                    <Route path = '/profile' render= {() => <Profile profilePost = {props.date}/>}/>
+                    <Route path = '/dialogs' render= {() => <Dialog dialogpost = {props.dialog} massege = {props.messege}/>}/>
                     <Route path = '/music' component={Music}/>
                     <Route path = '/news' component={News}/>
                     <Route path = '/setting' component={Setting}/>
