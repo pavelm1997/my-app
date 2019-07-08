@@ -17,8 +17,8 @@ const App = (props) => {
                 <Header/>
                 <Navbar/>
                 <div className={c.app_wriper_content}>
-                    <Route path = '/profile' render= {() => <Profile profilePost = {props.date}/>}/>
-                    <Route path = '/dialogs' render= {() => <Dialog dialogpost = {props.dialog} massege = {props.messege}/>}/>
+                    <Route path = '/profile' render= {() => <Profile profilePost = {props.appState.postData}/>}/>
+                    <Route path = '/dialogs' render= {() => <Dialog dialogpost = {props.appState.dialogDat} massege = {props.appState.massageData}/>}/>
                     <Route path = '/music' component={Music}/>
                     <Route path = '/news' component={News}/>
                     <Route path = '/setting' component={Setting}/>
