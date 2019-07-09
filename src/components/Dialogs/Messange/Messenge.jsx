@@ -2,10 +2,12 @@ import React from 'react';
 import c from './../Dialogs.module.css';
 
 const Messange = (props) => {
-    return (
+    return (<div>
         <div className={c.message}>
             {props.message}
-        </div>);
+
+            </div>
+    </div>);
 };
 
 export default Messange;
