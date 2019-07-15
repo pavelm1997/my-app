@@ -6,7 +6,7 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 let Profile = (props) => {
     return ( <div className = {c.content}>
         <ProfileInfo/>
-        <MyPost meyDate = {props.profilePost}/>
+        <MyPost meyDate = {props.profilePost} addPost={props.addPost}/>
 
     </div>);};
 export default Profile;
