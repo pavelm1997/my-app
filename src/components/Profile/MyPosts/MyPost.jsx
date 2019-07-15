@@ -6,9 +6,11 @@ let MyPost = (props) => {
 
     let newPostCreate = React.createRef();
 let addPost = ()=>{
+    props.addPost();
+};
+let onPostChange = ()=>{
     let text = newPostCreate.current.value;
-    props.addPost(text);
-
+props.updateNewTextPost(text);
 };
     let postelement = props.meyDate.map(post => <Post message={post.message} like={post.like}/>);
     return (<div>
@@ -16,7 +18,7 @@ let addPost = ()=>{
             <h3 className={c.post}> my-posts</h3>
             <div>
                 <div>
-                    <textarea ref={newPostCreate}></textarea>
+                    <textarea onChange={onPostChange} ref={newPostCreate} value={props.newPost}/>
                 </div>
                 <div>
                     <button onClick={addPost}>Add post</button>

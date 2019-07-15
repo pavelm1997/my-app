@@ -1,6 +1,10 @@
+let renderEntierTree = () => {
+  console.log('change');
+};
 
 let state = {
     profilePage:{
+        newPostText:'Введіть новий пост',
         postData:[
             {id: 1, message: 'Hi', like: '45'},
             {id: 2, message: 'It\'s my first post', like: '19'},
@@ -8,7 +12,9 @@ let state = {
         ],
 
     },
-   messagePage:{dialogDat:[
+   messagePage:{
+        newMessemgeText:'Введіть повідомлення!!!',
+        dialogDat:[
        {id: 1, name: 'Vasiliy'},
        {id: 2, name: 'Pavlo'},
        {id: 3, name: 'Petrovich'},
@@ -29,12 +35,44 @@ let state = {
 
 };
 
-export let addPost = (postMessenge)=>
-{
+window.state = state;
+
+
+export const addPost = () => {
     let newpost = {
         id: 4,
-        message: postMessenge,
-        like: '0'};
+        message: state.profilePage.newPostText,
+        like: '0'
+    };
     state.profilePage.postData.push(newpost);
+    state.profilePage.newPostText ='';
+    renderEntierTree(state);
 };
+
+
+export const updateNewTextPost = (newText) => {
+    state.profilePage.newPostText = newText;
+    renderEntierTree(state);
+};
+
+export const addMessenge = () => {
+    let newMessenge = {
+        id: 1, message: state.messagePage.newMessemgeText
+    };
+    state.messagePage.massageData.push(newMessenge);
+    state.messagePage.newMessemgeText ='';
+    renderEntierTree(state);
+};
+
+
+export const updateNewMessenge = (newText)=>{
+    state.messagePage.newMessemgeText = newText;
+    renderEntierTree(state);
+};
+
+
+export const subscreib = (observer) => {
+    renderEntierTree = observer;
+};
+
 export default state;

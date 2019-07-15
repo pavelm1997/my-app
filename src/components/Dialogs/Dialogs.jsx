@@ -8,9 +8,15 @@ const Dialog = (props) => {
     let dialogelement = props.dialogpost.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
     let messange = props.massege.map(massage => <Messange message={massage.message} id={massage.id}/>);
     let addCreatemessenge = React.createRef();
+
     let addMessenge = () => {
-        let texr = addCreatemessenge.current.value;
-        alert(texr);
+        props.addMessenge();
+    };
+
+    let onMessengeChange = ()=>
+    {
+        let text = addCreatemessenge.current.value;
+        props.updateNewMessenge(text);
     };
 
     return (<div className={c.dialogs}>
@@ -21,7 +27,7 @@ const Dialog = (props) => {
                 {messange}
             </div>
             <div>
-<textarea ref={addCreatemessenge}></textarea>
+                <textarea onChange={onMessengeChange} ref={addCreatemessenge} value={props.newMessemgeText}/>
                 <button onClick={addMessenge}>Add</button>
             </div>
         </div>
