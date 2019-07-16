@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {addMessenge, addPost, updateNewMessenge, updateNewTextPost} from './components/redux/state'
 import {BrowserRouter} from "react-router-dom";
 
 let renderEntierTree = (state) =>{

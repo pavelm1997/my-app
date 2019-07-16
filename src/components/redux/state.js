@@ -51,7 +51,7 @@ _renderEntierTree() {
 },
     updateNewTextPost(newText){
       this._state.profilePage.newPostText = newText;
-      this.renderEntierTree(this._state);
+      this._renderEntierTree(this._state);
 },
     addMessenge() {
      this.newMessenge = {
