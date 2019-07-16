@@ -1,8 +1,9 @@
-let renderEntierTree = () => {
+let store ={
+_renderEntierTree() {
   console.log('change');
-};
+},
 
-let state = {
+    _state : {
     profilePage:{
         newPostText:'Введіть новий пост',
         postData:[
@@ -33,46 +34,40 @@ let state = {
        {id: 7, message: 'Yo'}
    ]}
 
-};
+},
+    getState(){
+    return this._state;
+    },
 
-window.state = state;
-
-
-export const addPost = () => {
-    let newpost = {
+    addPost () {
+        this.newpost = {
         id: 4,
-        message: state.profilePage.newPostText,
+        message: this._state.profilePage.newPostText,
         like: '0'
     };
-    state.profilePage.postData.push(newpost);
-    state.profilePage.newPostText ='';
-    renderEntierTree(state);
-};
-
-
-export const updateNewTextPost = (newText) => {
-    state.profilePage.newPostText = newText;
-    renderEntierTree(state);
-};
-
-export const addMessenge = () => {
-    let newMessenge = {
-        id: 1, message: state.messagePage.newMessemgeText
+        this._state.profilePage.postData.push(this.newpost);
+        this._state.profilePage.newPostText ='';
+        this._renderEntierTree(this._state);
+},
+    updateNewTextPost(newText){
+      this._state.profilePage.newPostText = newText;
+      this.renderEntierTree(this._state);
+},
+    addMessenge() {
+     this.newMessenge = {
+        id: 1, message: this._state.messagePage.newMessemgeText
     };
-    state.messagePage.massageData.push(newMessenge);
-    state.messagePage.newMessemgeText ='';
-    renderEntierTree(state);
+    this._state.messagePage.massageData.push(this.newMessenge);
+     this._state.messagePage.newMessemgeText ='';
+     this._renderEntierTree(this._state);
+},
+  updateNewMessenge (newText) {
+      this._state.messagePage.newMessemgeText = newText;
+      this._renderEntierTree(this._state);
+},
+   subscreib (observer) {
+       this._renderEntierTree = observer;
+}
 };
-
-
-export const updateNewMessenge = (newText)=>{
-    state.messagePage.newMessemgeText = newText;
-    renderEntierTree(state);
-};
-
-
-export const subscreib = (observer) => {
-    renderEntierTree = observer;
-};
-
-export default state;
+window.store = store;
+export default store;

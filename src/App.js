@@ -10,7 +10,6 @@ import News from "./components/News/News";
 import Setting from "./components/Setting/Setting";
 
 const App = (props) => {
-
     return (
 
             <div className={c.app_wriper}>
