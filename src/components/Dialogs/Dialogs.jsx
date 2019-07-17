@@ -2,6 +2,7 @@ import React from 'react';
 import c from './Dialogs.module.css';
 import Messange from "./Messange/Messenge";
 import DialogItem from "./DialogItem/DialogItem";
+import {addMessengeActionCreator, uppdateNewMessengeActionCreator} from "../redux/state";
 
 const Dialog = (props) => {
     let dialogelement = props.dialogpost.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
@@ -9,13 +10,13 @@ const Dialog = (props) => {
     let addCreatemessenge = React.createRef();
 
     let addMessenge = () => {
-       props.dispatch({type:'ADD-MESSENGE'});
+       props.dispatch(addMessengeActionCreator());
     };
 
     let onMessengeChange = ()=>
     {
         let text = addCreatemessenge.current.value;
-        props.dispatch({type:'UPDATE-NEW-MESSENGE',newText:text});
+        props.dispatch(uppdateNewMessengeActionCreator(text));
     };
     return (<div className={c.dialogs}>
             <div className={c.dialog_item}>
