@@ -4,10 +4,10 @@ import MyPost from "./MyPosts/MyPost";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 let Profile = (props) => {
-    debugger;
+
     return ( <div className = {c.content}>
         <ProfileInfo/>
-        <MyPost meyDate = {props.profilePage.postData} newPost = {props.profilePage.newPostText} addPost={props.addPost} updateNewTextPost={props.updateNewTextPost}/>
+        <MyPost meyDate = {props.profilePage.postData} newPost = {props.profilePage.newPostText} dispatch={props.dispatch}/>
 
     </div>);};
 export default Profile;

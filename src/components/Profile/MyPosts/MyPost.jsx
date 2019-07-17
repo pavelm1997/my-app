@@ -6,11 +6,11 @@ let MyPost = (props) => {
 
     let newPostCreate = React.createRef();
 let addPost = ()=>{
-    props.addPost();
+    props.dispatch ({type:'ADD-POST'});
 };
 let onPostChange = ()=>{
     let text = newPostCreate.current.value;
-props.updateNewTextPost(text);
+    props.dispatch ({type:'UPDATE-NEW-TEXT-POST',newText:text});
 };
     let postelement = props.meyDate.map(post => <Post message={post.message} like={post.like}/>);
     return (<div>

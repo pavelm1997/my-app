@@ -38,36 +38,38 @@ _renderEntierTree() {
     getState(){
     return this._state;
     },
+    subscreib (observer) {
+        this._renderEntierTree = observer;
+    },
 
-    addPost () {
-        this.newpost = {
-        id: 4,
-        message: this._state.profilePage.newPostText,
-        like: '0'
-    };
-        this._state.profilePage.postData.push(this.newpost);
-        this._state.profilePage.newPostText ='';
-        this._renderEntierTree(this._state);
-},
-    updateNewTextPost(newText){
-      this._state.profilePage.newPostText = newText;
-      this._renderEntierTree(this._state);
-},
-    addMessenge() {
-     this.newMessenge = {
-        id: 1, message: this._state.messagePage.newMessemgeText
-    };
-    this._state.messagePage.massageData.push(this.newMessenge);
-     this._state.messagePage.newMessemgeText ='';
-     this._renderEntierTree(this._state);
-},
-  updateNewMessenge (newText) {
-      this._state.messagePage.newMessemgeText = newText;
-      this._renderEntierTree(this._state);
-},
-   subscreib (observer) {
-       this._renderEntierTree = observer;
-}
+    dispatch(action) {
+        if (action.type === 'ADD-POST'){
+            this.newpost = {
+                id: 4,
+                message: this._state.profilePage.newPostText,
+                like: '0'
+            };
+            this._state.profilePage.postData.push(this.newpost);
+            this._state.profilePage.newPostText ='';
+            this._renderEntierTree(this._state);
+        }
+        else if (action.type === 'UPDATE-NEW-MESSENGE') {
+            this._state.messagePage.newMessemgeText = action.newText;
+            this._renderEntierTree(this._state);
+        }
+        else  if (action.type === 'UPDATE-NEW-TEXT-POST') {
+            this._state.profilePage.newPostText = action.newText;
+            this._renderEntierTree(this._state);
+        }
+        else if (action.type === 'ADD-MESSENGE') {
+            this.newMessenge = {
+                id: 1, message: this._state.messagePage.newMessemgeText
+            };
+            this._state.messagePage.massageData.push(this.newMessenge);
+            this._state.messagePage.newMessemgeText ='';
+            this._renderEntierTree(this._state);
+        }
+    }
 };
 window.store = store;
 export default store;
