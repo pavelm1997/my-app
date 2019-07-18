@@ -1,4 +1,4 @@
-import store from './components/redux/state';
+import store from './redux/redux-store';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -17,7 +17,7 @@ let renderEntierTree = (state) =>{
 };
 
 renderEntierTree(store.getState);
-store.subscreib(renderEntierTree);
+store.subscribe(renderEntierTree);
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
