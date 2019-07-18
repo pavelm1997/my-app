@@ -7,7 +7,7 @@ let Profile = (props) => {
 
     return ( <div className = {c.content}>
         <ProfileInfo/>
-        <MyPostConteiner store={props.store}/>
+        <MyPostConteiner />
 
     </div>);};
 export default Profile;
