@@ -2,8 +2,8 @@ const UPDATE_NEW_MESSENGE = 'UPDATE-NEW-MESSENGE';
 const ADD_MESSENGE = 'ADD-MESSENGE';
 
 let initialState = {
-    newMessemgeText:'Введіть повідомлення!!!',
-    dialogDat:[
+    newMessemgeText: 'Введіть повідомлення!!!',
+    dialogDat: [
         {id: 1, name: 'Vasiliy'},
         {id: 2, name: 'Pavlo'},
         {id: 3, name: 'Petrovich'},
@@ -12,7 +12,7 @@ let initialState = {
         {id: 6, name: 'Shura'},
         {id: 7, name: 'Mikola'}
     ],
-    massageData:[
+    massageData: [
         {id: 1, message: 'Hi'},
         {id: 2, message: 'I'},
         {id: 3, message: 'I go to the school'},
@@ -23,31 +23,40 @@ let initialState = {
     ]
 };
 
-const dialogReducer =(state = initialState, action)=> {
-switch (action.type)
-{
-    case (ADD_MESSENGE):{
-    let newMessenge = {
-        id: 1, message: state.newMessemgeText
-    };
-    let copyState = {...state};
-    copyState.massageData = [...state.massageData];
-    copyState.massageData.push(newMessenge);
-    copyState.newMessemgeText ='';
-        return copyState;
-}
-    case(UPDATE_NEW_MESSENGE):{
-        let copyState = {...state};
-        copyState.newMessemgeText = action.newText;return copyState;}
-    default:return state;
-}
+const dialogReducer = (state = initialState, action) => {
+
+
+    switch (action.type) {
+        case (ADD_MESSENGE): {
+            let newMessenge = {
+                id: 1, message: state.newMessemgeText
+            };
+            return{
+                ...state,
+                massageData: [...state.massageData, newMessenge],
+                newMessemgeText: ''
+            };
+
+        }
+        case(UPDATE_NEW_MESSENGE): {
+            return {
+                ...state,
+                newMessemgeText: action.newText
+            };
+
+        }
+
+
+        default:
+            return state;
+    }
 
 
     return state;
 };
 
-export const addMessengeActionCreator =() => ({type:ADD_MESSENGE});
+export const addMessengeActionCreator = () => ({type: ADD_MESSENGE});
 
-export const uppdateNewMessengeActionCreator = (text) =>({type:UPDATE_NEW_MESSENGE,newText:text});
+export const uppdateNewMessengeActionCreator = (text) => ({type: UPDATE_NEW_MESSENGE, newText: text});
 export default dialogReducer;
 

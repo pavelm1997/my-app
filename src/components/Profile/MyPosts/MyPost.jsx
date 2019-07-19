@@ -12,7 +12,7 @@ let onPostChange = ()=>{
     let text = newPostCreate.current.value;
     props.updateNewTextPost(text);
 };
-    let postelement = props.posts.map(post => <Post message={post.message} like={post.like}/>);
+    let postelement = props.posts.map(post => <Post message={post.message} like={post.like} />);//key={post.id}
     return (<div>
         <div className={c.postBlock}>
             <h3 className={c.post}> my-posts</h3>

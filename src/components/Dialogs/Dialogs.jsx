@@ -5,8 +5,8 @@ import DialogItem from "./DialogItem/DialogItem";
 
 
 const Dialog = (props) => {
-    let dialogelement = props.dialogpost.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
-    let messange = props.massege.map(massage => <Messange message={massage.message} id={massage.id}/>);
+    let dialogelement = props.dialogpost.map(dialog => <DialogItem name={dialog.name}  id={dialog.id}/>);//key={dialog.id}
+    let messange = props.massege.map(massage => <Messange message={massage.message}  id={massage.id}/>);//key={massage.id}
 
     let addCreatemessenge = React.createRef();
 
