@@ -30,11 +30,15 @@ switch (action.type)
     let newMessenge = {
         id: 1, message: state.newMessemgeText
     };
-    state.massageData.push(newMessenge);
-    state.newMessemgeText ='';
-        return state;
+    let copyState = {...state};
+    copyState.massageData = [...state.massageData];
+    copyState.massageData.push(newMessenge);
+    copyState.newMessemgeText ='';
+        return copyState;
 }
-    case(UPDATE_NEW_MESSENGE):{state.newMessemgeText = action.newText;return state;}
+    case(UPDATE_NEW_MESSENGE):{
+        let copyState = {...state};
+        copyState.newMessemgeText = action.newText;return copyState;}
     default:return state;
 }
 
