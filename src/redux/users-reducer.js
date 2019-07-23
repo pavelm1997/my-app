@@ -32,6 +32,7 @@ export const useresReducer = (state = initialState, action) => {
                 })
             };
         case SED_USERS:{
+
             return{...state, users:[ ...state.users, ...action.users]}
         }
 
