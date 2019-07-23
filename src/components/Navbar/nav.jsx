@@ -6,6 +6,9 @@ let Navbar = () => {
     <div >
         <NavLink to='/profile' className={c.myButton}> Profile</NavLink>
     </div>
+        <div  >
+            <NavLink to='/users' className={c.myButton}> Users</NavLink>
+        </div>
     <div >
         <NavLink to='/dialogs' className={c.myButton}> Messages</NavLink>
     </div>
